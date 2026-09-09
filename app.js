@@ -20,11 +20,7 @@ app.get("/", (req, res) => {
     }
     ];
 
-    res.render("accueil", {nom, prestations});
+    res.render("accueil", { nom, prestations });
 });
-
-
-
-app.render()
 
 app.listen(3000);

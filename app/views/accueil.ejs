@@ -7,5 +7,12 @@
 <body>
     <h1>Bienvenue chez <%= nom %> Bien-être !</h1>
     <p>Massages bien-être à Toulon.</p>
+<% prestations.forEach((prestation) => { %>
+
+    <h2><%= prestation.nom %></h2>
+    <p><%= prestation.duree %></p>
+    <p><%= prestation.prix %></p>
+
+<% }); %>
 </body>
 </html>
