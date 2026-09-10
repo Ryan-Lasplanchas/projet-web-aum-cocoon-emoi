@@ -1,179 +1,113 @@
-# projet-web-aum-cocoon-emoi
-
-# 🌿 Projet Clara Bien-être
+# 🌸 Projet Clara Bien-être — Dashboard
 
 ## 🎯 Objectif du projet
 
-Créer un site vitrine pour une masseuse fictive, **Clara Martin**, afin de présenter son activité de massages bien-être et permettre aux visiteurs de la contacter.
+Créer un site vitrine pour **Clara Martin**, praticienne en massages bien-être à Toulon.
 
-Le projet sert également d'exercice pour pratiquer :
+Le site doit permettre de :
+
+* présenter son activité ;
+* présenter ses prestations ;
+* donner les informations de contact ;
+* permettre aux visiteurs de la contacter.
+
+Pas de réservation en ligne pour le moment.
+
+---
+
+# 🏗️ Architecture prévue
+
+```text
+clara-bien-etre/
+├── app.js
+├── package.json
+│
+├── app/
+│   ├── controllers/
+│   │   └── mainController.js
+│   │
+│   ├── routes/
+│   │   └── router.js
+│   │
+│   └── views/
+│       └── accueil.ejs
+│
+└── public/
+    ├── css/
+    │   └── style.css
+    │
+    └── js/
+        └── script.js
+```
+
+---
+
+# 🛠️ Technologies
 
 * HTML / CSS
 * JavaScript
 * Node.js
 * Express
 * EJS
-* PostgreSQL
+* PostgreSQL → à introduire plus tard
+* Nodemon → à configurer lorsque nécessaire
+
+Les dépendances sont installées progressivement, au moment où elles deviennent utiles.
 
 ---
 
-## 🏗️ Architecture du projet
+# ✅ Étapes terminées
 
-```text
-clara-bien-etre/
-├── app.js
-├── package.json
-├── app/
-│   ├── controllers/
-│   ├── routes/
-│   └── views/
-│       └── accueil.ejs
-└── public/
-    ├── css/
-    └── js/
-```
+### 1. Définition du projet
 
----
+* [x] Choix du projet : site vitrine pour une masseuse
+* [x] Création des données fictives
+* [x] Définition des prestations
+* [x] Définition des informations de contact
 
-# ✅ Étapes réalisées
+### 2. Node.js
 
-## 1. Définition du projet
+* [x] Comprendre le rôle de Node.js
+* [x] Comprendre le fichier `package.json`
+* [x] Comprendre le rôle du fichier d'entrée `app.js`
 
-* [x] Définir le projet de site vitrine
-* [x] Définir l'activité : massages bien-être
-* [x] Définir le nom : Clara Bien-être
-* [x] Définir les informations fictives de Clara
-* [x] Définir les prestations
-* [x] Définir les pages principales du site
+### 3. Express
 
----
+* [x] Installation d'Express
+* [x] Import d'Express
+* [x] Création de l'application avec `express()`
+* [x] Comprendre la variable `app`
+* [x] Comprendre `app.get()`
+* [x] Comprendre `req` et `res`
+* [x] Comprendre `res.send()`
+* [x] Comprendre `app.listen()`
 
-## 2. Mise en place de Node.js
+### 4. EJS
 
-* [x] Créer le projet Node.js
-* [x] Comprendre le rôle de `package.json`
-* [x] Comprendre le rôle de `app.js`
-* [x] Comprendre la différence entre `app.js` et `index.js`
-* [x] Configurer les modules ES avec `"type": "module"`
+* [x] Installation d'EJS
+* [x] Configuration du moteur de vues
+* [x] Configuration du dossier `app/views`
+* [x] Création de `accueil.ejs`
+* [x] Comprendre `res.render()`
+* [x] Comprendre la transmission de données d'Express vers EJS
 
-### Notions comprises
+### 5. Données dynamiques
 
-* Node.js permet d'exécuter du JavaScript en dehors du navigateur.
-* `package.json` contient notamment les informations et dépendances du projet.
-* `app.js` sert ici de point d'entrée et contient la configuration de l'application.
+* [x] Créer une variable JavaScript `nom`
+* [x] Transmettre `nom` à EJS
+* [x] Afficher une variable avec `<%= %>`
+* [x] Comprendre la différence entre HTML statique et données dynamiques
 
----
+### 6. Tableau d'objets
 
-## 3. Mise en place d'Express
+* [x] Comprendre un objet JavaScript
+* [x] Comprendre un tableau
+* [x] Comprendre un tableau contenant plusieurs objets
+* [x] Créer le tableau `prestations`
+* [x] Comprendre l'accès à un élément avec son indice
+* [x] Comprendre l'accès à une propriété avec `.nom`, `.duree`, `.prix`
 
-* [x] Installer Express
-* [x] Importer Express
-* [x] Créer une application Express
-* [x] Créer une première route
-* [x] Démarrer le serveur
-
-### Code étudié
-
-```js
-import express from "express";
-
-const app = express();
-```
-
-### Notions comprises
-
-* Express est un framework web pour Node.js.
-* `express()` crée une application Express.
-* `app` contient cette application.
-* `app.get()` permet de définir le comportement d'une route GET.
-* `app.listen()` démarre le serveur et lui permet d'écouter les requêtes.
-
----
-
-## 4. Première route
-
-* [x] Créer la route `/`
-* [x] Comprendre `req`
-* [x] Comprendre `res`
-* [x] Tester une réponse avec `res.send()`
-
-### Notions comprises
-
-```js
-app.get("/", (req, res) => {
-    // traitement de la requête
-});
-```
-
-* `req` représente la requête reçue.
-* `res` représente la réponse que le serveur va envoyer.
-
----
-
-## 5. Mise en place d'EJS
-
-* [x] Installer EJS
-* [x] Configurer EJS comme moteur de vues
-* [x] Configurer le dossier `app/views`
-* [x] Créer `accueil.ejs`
-* [x] Utiliser `res.render()`
-
-### Configuration étudiée
-
-```js
-app.set("view engine", "ejs");
-app.set("views", "app/views");
-```
-
-### Notions comprises
-
-* EJS permet de générer du HTML à partir de données JavaScript.
-* `res.render("accueil")` demande à Express de rendre `accueil.ejs`.
-* `app.set("views", "app/views")` indique où se trouvent les vues.
-
----
-
-## 6. Transmission de données à EJS
-
-* [x] Créer une variable JavaScript
-* [x] Transmettre cette variable à EJS
-* [x] Afficher une variable dans EJS
-
-### Exemple étudié
-
-```js
-const nom = "Clara";
-
-res.render("accueil", { nom });
-```
-
-Dans EJS :
-
-```ejs
-<h1>Bienvenue chez <%= nom %> Bien-être !</h1>
-```
-
-### Notions comprises
-
-`<%= nom %>` permet à EJS d'insérer la valeur de la variable `nom` dans le HTML généré.
-
----
-
-# 🚧 Étape en cours
-
-## 7. Affichage dynamique des prestations
-
-Objectif : ne plus écrire chaque prestation directement dans le HTML.
-
-### À faire
-
-* [ ] Créer un tableau JavaScript contenant les prestations
-* [ ] Comprendre un tableau d'objets
-* [ ] Transmettre le tableau à EJS
-* [ ] Découvrir la boucle `forEach`
-* [ ] Afficher automatiquement chaque prestation dans `accueil.ejs`
-
-Exemple de structure envisagée :
+Exemple actuel :
 
 ```js
 const prestations = [
@@ -190,34 +124,102 @@ const prestations = [
 ];
 ```
 
+### 7. Boucle EJS
+
+* [x] Comprendre pourquoi utiliser une boucle
+* [x] Découvrir `forEach()`
+* [x] Comprendre que `prestation` représente une prestation individuelle
+* [x] Comprendre `<% %>`
+* [x] Comprendre `<%= %>`
+* [x] Afficher dynamiquement les prestations avec `forEach()`
+
 ---
 
-# 📋 À venir
+# 📍 Étape actuelle
 
-## 8. Organisation du projet
+Nous venons de terminer la création d'une boucle permettant d'afficher automatiquement les prestations.
 
-* [ ] Comprendre les routes
-* [ ] Comprendre les controllers
-* [ ] Séparer progressivement les responsabilités
-* [ ] Mettre en place les dossiers `routes` et `controllers`
+Structure actuelle dans `accueil.ejs` :
 
-## 9. Front-end
+```ejs
+<% prestations.forEach((prestation) => { %>
 
-* [ ] Créer le CSS
-* [ ] Créer la mise en page
+    <h2><%= prestation.nom %></h2>
+
+    <p><%= prestation.duree %> min</p>
+
+    <p><%= prestation.prix %> €</p>
+
+<% }); %>
+```
+
+### Ce que je dois savoir expliquer
+
+```text
+prestations
+    ↓
+forEach()
+    ↓
+une prestation à la fois
+    ↓
+prestation.nom
+prestation.duree
+prestation.prix
+    ↓
+HTML généré
+```
+
+---
+
+# 🔜 Prochaines étapes
+
+## Organisation de l'application
+
+* [ ] Ajouter les 4 prestations
+* [ ] Séparer les routes du fichier `app.js`
+* [ ] Créer le dossier `routes`
+* [ ] Créer le dossier `controllers`
+* [ ] Comprendre le rôle d'un contrôleur
+* [ ] Comprendre le chemin :
+
+```text
+Navigateur
+   ↓
+Route
+   ↓
+Controller
+   ↓
+Vue EJS
+   ↓
+HTML
+```
+
+## Front-end
+
+* [ ] Créer la structure HTML complète
+* [ ] Ajouter le CSS
+* [ ] Créer les différentes pages
 * [ ] Ajouter du JavaScript côté navigateur
-* [ ] Rendre le site responsive
 
-## 10. PostgreSQL
+Pages envisagées :
+
+* [ ] Accueil
+* [ ] Prestations
+* [ ] À propos
+* [ ] Contact
+
+## Base de données
+
+PostgreSQL sera introduit **après avoir compris le fonctionnement avec les tableaux JavaScript**.
 
 * [ ] Comprendre pourquoi utiliser une base de données
 * [ ] Installer/configurer PostgreSQL lorsque nécessaire
 * [ ] Créer la base de données
 * [ ] Créer les tables
 * [ ] Insérer les données
-* [ ] Effectuer des requêtes SQL
 * [ ] Connecter Node.js à PostgreSQL
-* [ ] Remplacer progressivement les données JavaScript par les données de la base
+* [ ] Récupérer les prestations depuis PostgreSQL
+* [ ] Remplacer progressivement le tableau JavaScript par les données de la BDD
 
 ---
 
@@ -225,29 +227,30 @@ const prestations = [
 
 Pour chaque nouvelle notion :
 
-1. **Comprendre** ce que l'on cherche à faire
-2. **Réfléchir** à la stratégie
-3. **Essayer** soi-même
-4. Recevoir un **indice** si nécessaire
-5. Corriger le code
-6. Comprendre pourquoi la solution fonctionne
+1. **Comprendre** ce qu'on cherche à faire
+2. **Réfléchir** à la solution
+3. Recevoir un **indice** si nécessaire
+4. Essayer soi-même
+5. Corriger et comprendre les erreurs
+6. Utiliser la **solution complète** seulement lorsque nécessaire
 
-L'objectif est de comprendre le fonctionnement du projet et de devenir progressivement autonome, plutôt que de simplement recopier du code.
+Objectif principal :
+
+> **Comprendre → raisonner → pratiquer → devenir autonome**
 
 ---
 
-# 📌 État actuel
+# 📊 État actuel
 
-**Technologies utilisées :**
+**Projet :** 🟢 En cours
 
-* HTML ✅
-* Node.js ✅
-* Express ✅
-* EJS ✅
-* JavaScript 🟡
-* PostgreSQL ⏳
-* CSS ⏳
+**Express :** 🟢 Compris dans les grandes lignes
+**EJS :** 🟢 En cours d'apprentissage
+**JavaScript :** 🟡 En cours
+**Architecture MVC :** 🔵 À venir
+**CSS :** 🔵 À venir
+**PostgreSQL :** 🔵 À venir
 
-**Prochaine étape :**
+### Prochaine notion
 
-> Créer un tableau d'objets `prestations` et apprendre à le parcourir avec `forEach` dans EJS.
+👉 **Organiser le code avec `routes` et `controllers`**, après avoir vérifié que l'affichage des prestations avec `forEach()` fonctionne correctement.
