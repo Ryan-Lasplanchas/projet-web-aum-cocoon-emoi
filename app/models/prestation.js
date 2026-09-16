@@ -11,8 +11,8 @@ const prestations = [
     }
 ];
 
-const getAllPrestations = () => {
+const getAllPrestations = async () => {
     return prestations;
 };
 
-export default prestations;
+export default getAllPrestations;
