@@ -11,4 +11,8 @@ const prestations = [
     }
 ];
 
+const getAllPrestations = () => {
+    return prestations;
+};
+
 export default prestations;

@@ -1,20 +1,10 @@
+import getAllPrestations from "../models/prestation.js";
+
 const renderPrestationsPage = (req, res) => {
     const nom = "Clara";
+    const prestations = await getAllPrestations();
 
-    const prestations = [
-        {
-            nom: "Massage relaxant",
-            duree: 60,
-            prix: 60
-        },
-        {
-            nom: "Massage du dos",
-            duree: 30,
-            prix: 35
-        }
-    ];
-
-    res.render("prestations", { nom, prestations });
+    res.render("accueil", { nom, prestations });
 };
 
 export default renderPrestationsPage;
