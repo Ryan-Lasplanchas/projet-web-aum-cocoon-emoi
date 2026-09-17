@@ -2,18 +2,28 @@
 
 <main>
 
-    <h1>Nos prestations</h1>
+    <section class="page-introduction">
 
-    <p>
-        Découvrez les différentes prestations proposées
-        par Aum Cocoon Emoi.
-    </p>
+        <h1>Nos prestations</h1>
 
-    <section>
+        <p>
+            Découvrez les différentes prestations proposées
+            par Aum Cocoon Emoi.
+        </p>
+
+        <p>
+            Chaque prestation est pensée comme une invitation
+            à prendre un moment pour soi.
+        </p>
+
+    </section>
+
+
+    <section class="prestations-list">
 
         <% prestations.forEach(prestation => { %>
 
-            <article>
+            <article class="prestation-card">
 
                 <h2>
                     <%= prestation.categorie %>
@@ -23,21 +33,28 @@
                     <%= prestation.description %>
                 </p>
 
+
                 <% if (prestation.activites) { %>
 
-                    <h3>Les ateliers proposés</h3>
+                    <div class="ateliers">
 
-                    <ul>
+                        <h3>
+                            Les ateliers proposés
+                        </h3>
 
-                        <% prestation.activites.forEach(activite => { %>
+                        <ul>
 
-                            <li>
-                                <%= activite %>
-                            </li>
+                            <% prestation.activites.forEach(activite => { %>
 
-                        <% }); %>
+                                <li>
+                                    <%= activite %>
+                                </li>
 
-                    </ul>
+                            <% }); %>
+
+                        </ul>
+
+                    </div>
 
                 <% } %>
 
@@ -47,17 +64,20 @@
 
     </section>
 
-    <section>
 
-        <h2>Une question ?</h2>
+    <section class="contact">
+
+        <h2>
+            Une question ?
+        </h2>
 
         <p>
-            Pour obtenir plus d'informations ou prendre
-            rendez-vous avec Cathy, contactez-nous.
+            Vous souhaitez obtenir davantage d'informations
+            sur une prestation ou prendre rendez-vous ?
         </p>
 
         <a href="/contact" class="button">
-            Nous contacter
+            Contacter Cathy
         </a>
 
     </section>

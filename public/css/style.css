@@ -149,28 +149,57 @@ section {
    PRESTATIONS
 ========================= */
 
-.prestations {
+.prestations-list {
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 25px;
+    gap: 30px;
+
+    margin-bottom: 80px;
 }
 
-article {
+
+.prestation-card {
+    padding: 35px;
+
     background-color: #fffdf9;
 
-    padding: 30px;
-
-    border-radius: 15px;
-
     border: 1px solid #e6ddd3;
+
+    border-radius: 20px;
 }
 
-article p {
+
+.prestation-card h2 {
+    margin-bottom: 20px;
+}
+
+
+.prestation-card p {
     margin-bottom: 0;
 }
 
+
+.ateliers {
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e6ddd3;
+}
+
+
+.ateliers h3 {
+    margin-bottom: 15px;
+}
+
+
+.ateliers ul {
+    margin: 0;
+
+    padding-left: 20px;
+}
 
 /* =========================
    CONTACT
@@ -241,6 +270,30 @@ footer {
 }
 
 /* =========================
+   PAGE À PROPOS
+========================= */
+
+.about-card {
+    max-width: 800px;
+    margin: 0 auto 60px;
+
+    padding: 50px;
+
+    background-color: #fffdf9;
+
+    border: 1px solid #e6ddd3;
+    border-radius: 20px;
+}
+
+.about-card h2 {
+    text-align: center;
+}
+
+.about-card p {
+    margin-bottom: 20px;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -274,7 +327,7 @@ footer {
         padding: 30px;
     }
 
-    .prestations {
+    .prestations-list {
         grid-template-columns: 1fr;
     }
 
