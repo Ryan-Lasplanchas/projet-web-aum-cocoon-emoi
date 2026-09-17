@@ -1,10 +1,34 @@
-import getAllPrestations from "../models/prestation.js";
+import prestations from "../models/prestation.js";
 
-const renderHomePage = async (req, res) => {
-    const nom = "Clara";
-    const prestations = await getAllPrestations();
+const mainController = {
 
-    res.render("accueil", { nom, prestations });
+    renderHomePage: (req, res) => {
+        res.render("accueil", {
+            nom: "Aum Cocoon Emoi",
+            cathy: "Cathy"
+        });
+    },
+
+    renderPrestationsPage: (req, res) => {
+        res.render("prestations", {
+            prestations
+        });
+    },
+
+    renderAboutPage: (req, res) => {
+        res.render("a-propos", {
+            nom: "Aum Cocoon Emoi",
+            cathy: "Cathy"
+        });
+    },
+
+    renderContactPage: (req, res) => {
+        res.render("contact", {
+            nom: "Aum Cocoon Emoi",
+            cathy: "Cathy"
+        });
+    }
+
 };
 
-export default renderHomePage;
+export default mainController;

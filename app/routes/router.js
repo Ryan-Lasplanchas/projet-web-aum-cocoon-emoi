@@ -1,10 +1,14 @@
-import express from "express";
-import renderHomePage from "../controllers/mainController.js";
-import renderPrestationsPage from "../controllers/mainController.js";
+import { Router } from "express";
+import mainController from "../controllers/mainController.js";
 
-const router = express.Router();
+const router = Router();
 
-router.get("/", renderHomePage);
-router.get("/prestations", renderPrestationsPage);
+router.get("/", mainController.renderHomePage);
+
+router.get("/prestations", mainController.renderPrestationsPage);
+
+router.get("/a-propos", mainController.renderAboutPage);
+
+router.get("/contact", mainController.renderContactPage);
 
 export default router;

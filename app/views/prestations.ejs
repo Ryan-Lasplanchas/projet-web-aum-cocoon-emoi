@@ -2,17 +2,54 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Clara Bien-être</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestations - Aum Cocoon Emoi</title>
 </head>
+
 <body>
-    <h1>Prestations</h1>
-    <p>Massages bien-être à Toulon.</p>
-<% prestations.forEach((prestation) => { %>
 
-    <h2><%= prestation.nom %></h2>
-    <p><%= prestation.duree %></p>
-    <p><%= prestation.prix %></p>
+    <header>
+        <h1>Aum Cocoon Emoi</h1>
 
-<% }); %>
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/prestations">Prestations</a>
+            <a href="/a-propos">À propos</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>Nos prestations</h2>
+
+        <% prestations.forEach(prestation => { %>
+
+            <article>
+
+                <h3><%= prestation.categorie %></h3>
+
+                <p>
+                    <%= prestation.description %>
+                </p>
+
+                <% if (prestation.activites) { %>
+
+                    <h4>Les ateliers proposés :</h4>
+
+                    <ul>
+                        <% prestation.activites.forEach(activite => { %>
+                            <li><%= activite %></li>
+                        <% }); %>
+                    </ul>
+
+                <% } %>
+
+            </article>
+
+        <% }); %>
+
+    </main>
+
 </body>
 </html>
