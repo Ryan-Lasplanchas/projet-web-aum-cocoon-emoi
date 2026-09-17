@@ -201,6 +201,44 @@ footer {
     border-top: 1px solid #e6ddd3;
 }
 
+/* =========================
+   PAGE INTRODUCTION
+========================= */
+
+.page-introduction {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+
+/* =========================
+   CARTE CONTACT
+========================= */
+
+.contact-card {
+    max-width: 600px;
+    margin: 0 auto;
+
+    padding: 50px;
+
+    text-align: center;
+
+    background-color: #fffdf9;
+
+    border: 1px solid #e6ddd3;
+    border-radius: 20px;
+}
+
+.contact-card p {
+    margin-bottom: 30px;
+}
+
+.phone-number {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
 
 /* =========================
    RESPONSIVE
