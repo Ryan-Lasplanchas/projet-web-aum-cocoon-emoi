@@ -1,55 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Prestations - Aum Cocoon Emoi</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Aum Cocoon Emoi</h1>
 
         <nav>
-            <a href="/">Accueil</a>
-            <a href="/prestations">Prestations</a>
-            <a href="/a-propos">À propos</a>
-            <a href="/contact">Contact</a>
+            <a href="/">Aum Cocoon Emoi</a>
+
+            <div>
+                <a href="/">Accueil</a>
+                <a href="/prestations">Prestations</a>
+                <a href="/a-propos">À propos</a>
+                <a href="/contact">Contact</a>
+            </div>
         </nav>
+
     </header>
+
 
     <main>
 
-        <h2>Nos prestations</h2>
+        <h1>Nos prestations</h1>
 
-        <% prestations.forEach(prestation => { %>
+        <p>
+            Découvrez les différentes prestations proposées
+            par Aum Cocoon Emoi.
+        </p>
 
-            <article>
 
-                <h3><%= prestation.categorie %></h3>
+        <section>
 
-                <p>
-                    <%= prestation.description %>
-                </p>
+            <% prestations.forEach(prestation => { %>
 
-                <% if (prestation.activites) { %>
+                <article>
 
-                    <h4>Les ateliers proposés :</h4>
+                    <h2>
+                        <%= prestation.categorie %>
+                    </h2>
 
-                    <ul>
-                        <% prestation.activites.forEach(activite => { %>
-                            <li><%= activite %></li>
-                        <% }); %>
-                    </ul>
+                    <p>
+                        <%= prestation.description %>
+                    </p>
 
-                <% } %>
 
-            </article>
+                    <% if (prestation.activites) { %>
 
-        <% }); %>
+                        <h3>Les ateliers proposés</h3>
+
+                        <ul>
+
+                            <% prestation.activites.forEach(activite => { %>
+
+                                <li>
+                                    <%= activite %>
+                                </li>
+
+                            <% }); %>
+
+                        </ul>
+
+                    <% } %>
+
+                </article>
+
+            <% }); %>
+
+        </section>
+
+
+        <section>
+
+            <h2>Une question ?</h2>
+
+            <p>
+                Pour obtenir plus d'informations ou prendre
+                rendez-vous avec Cathy, contactez-nous.
+            </p>
+
+            <a href="/contact">
+                Nous contacter
+            </a>
+
+        </section>
 
     </main>
 
+
+    <footer>
+
+        <p>
+            © Aum Cocoon Emoi
+        </p>
+
+    </footer>
+
 </body>
+
 </html>
