@@ -1,40 +1,110 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aum Cocoon Emoi</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+<%- include("partials/header") %>
 
-<body>
+<main>
 
-    <header>
-        <h1>Aum Cocoon Emoi</h1>
+    <section class="introduction">
 
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/prestations">Prestations</a>
-            <a href="/a-propos">À propos</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </header>
-
-    <main>
-
-        <h2>Bienvenue chez Aum Cocoon Emoi</h2>
+        <h1>
+            Aum Cocoon Emoi
+        </h1>
 
         <p>
-            Un espace dédié au bien-être et à l'épanouissement personnel.
+            Un espace dédié au bien-être, à la détente
+            et à l'épanouissement personnel.
         </p>
+
+        <a href="/prestations" class="button">
+            Découvrir les prestations
+        </a>
+
+    </section>
+
+
+    <section>
+
+        <h2>
+            Bienvenue chez Aum Cocoon Emoi
+        </h2>
 
         <p>
-            Les prestations sont proposées par <%= cathy %>.
+            Cathy vous accueille dans un espace consacré
+            au bien-être du corps et de l'esprit.
         </p>
 
-        <a href="/prestations">Découvrir les prestations</a>
+    </section>
 
-    </main>
 
-</body>
-</html>
+    <section>
+
+        <h2>
+            Nos prestations
+        </h2>
+
+        <div class="prestations">
+
+            <% prestations.forEach(prestation => { %>
+
+                <article>
+
+                    <h3>
+                        <%= prestation.categorie %>
+                    </h3>
+
+                    <p>
+                        <%= prestation.description %>
+                    </p>
+
+                </article>
+
+            <% }); %>
+
+        </div>
+
+        <br>
+
+        <a href="/prestations" class="button">
+            Voir toutes les prestations
+        </a>
+
+    </section>
+
+
+    <section>
+
+        <h2>
+            À propos de Cathy
+        </h2>
+
+        <p>
+            Cathy est la praticienne et la personne
+            qui accompagne les clients au sein
+            d'Aum Cocoon Emoi.
+        </p>
+
+        <a href="/a-propos">
+            En savoir plus
+        </a>
+
+    </section>
+
+
+    <section class="contact">
+
+        <h2>
+            Envie d'en savoir plus ?
+        </h2>
+
+        <p>
+            Pour toute question ou demande de rendez-vous,
+            n'hésitez pas à contacter Cathy.
+        </p>
+
+        <a href="/contact" class="button">
+            Nous contacter
+        </a>
+
+    </section>
+
+</main>
+
+<%- include("partials/footer") %>
