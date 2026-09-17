@@ -1,41 +1,22 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À propos - Aum Cocoon Emoi</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+<%- include("partials/header") %>
 
-<body>
+<main>
 
-    <header>
-        <h1>Aum Cocoon Emoi</h1>
+    <h1>À propos</h1>
 
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/prestations">Prestations</a>
-            <a href="/a-propos">À propos</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </header>
+    <h2>
+        <%= cathy %>
+    </h2>
 
-    <main>
+    <p>
+        Bienvenue dans l'univers de <%= nom %>.
+    </p>
 
-        <h2>À propos</h2>
+    <p>
+        Cathy vous accompagne à travers différentes prestations
+        dédiées au bien-être, à la détente et à l'épanouissement personnel.
+    </p>
 
-        <h3><%= cathy %></h3>
+</main>
 
-        <p>
-            Bienvenue dans l'univers de <%= nom %>.
-        </p>
-
-        <p>
-            Cathy vous accompagne à travers différentes prestations
-            dédiées au bien-être, à la détente et à l'épanouissement personnel.
-        </p>
-
-    </main>
-
-</body>
-</html>
+<%- include("partials/footer") %>

@@ -1,50 +1,39 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Aum Cocoon Emoi</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+<%- include("partials/header") %>
 
-<body>
+<main>
 
-    <header>
-        <h1>Aum Cocoon Emoi</h1>
+    <section>
 
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/prestations">Prestations</a>
-            <a href="/a-propos">À propos</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </header>
-
-    <main>
-
-        <h2>Contact</h2>
+        <h1>Contact</h1>
 
         <p>
-            Pour toute demande d'information ou prise de rendez-vous,
-            contactez Cathy.
+            Pour toute demande d'information ou pour prendre
+            rendez-vous, contactez directement Cathy par téléphone.
         </p>
 
-        <form>
+    </section>
 
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom">
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
+    <section class="contact">
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message"></textarea>
+        <h2>
+            Prendre contact avec Cathy
+        </h2>
 
-            <button type="submit">Envoyer</button>
+        <p>
+            Cathy est à votre écoute pour répondre à vos questions
+            et vous renseigner sur les différentes prestations.
+        </p>
 
-        </form>
+        <p>
+            <strong>Téléphone :</strong>
+            <a href="tel:+33612345678">
+                06 12 34 56 78
+            </a>
+        </p>
 
-    </main>
+    </section>
 
-</body>
-</html>
+</main>
+
+<%- include("partials/footer") %>
